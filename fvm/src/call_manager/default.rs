@@ -283,6 +283,8 @@ where
             let kernel = K::new(cm, from, to, method, value.clone());
             let mut store = Store::new(&engine, InvocationData::new(kernel));
 
+            store.add_fuel(u64::MAX).expect("failed to add fuel");
+
             // Store parameters, if any.
             let param_id = if params.len() > 0 {
                 match store.data_mut().kernel.block_create(DAG_CBOR, params) {

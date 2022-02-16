@@ -3,14 +3,23 @@ use std::sync::{Arc, RwLock};
 
 use cid::Cid;
 use derive_more::Deref;
-use wasmtime::Module;
+use wasmtime::{Config, Module};
 
 /// A caching wasmtime engine.
-#[derive(Deref, Default, Clone)]
+#[derive(Deref, Clone)]
 pub struct Engine {
     #[deref]
     engine: wasmtime::Engine,
     modules: Arc<RwLock<HashMap<Cid, Module>>>,
+}
+
+impl Default for Engine {
+    fn default() -> Self {
+        Engine {
+            engine: wasmtime::Engine::new(Config::new().consume_fuel(true)).unwrap(),
+            modules: Default::default(),
+        }
+    }
 }
 
 impl Engine {

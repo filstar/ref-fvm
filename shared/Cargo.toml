@@ -35,7 +35,8 @@ serde_bytes = { package = "cs_serde_bytes", version = "0.12" }
 ## non-wasm dependencies; these dependencies and the respective code is
 ## only activated through non-default features, which the Kernel enables, but
 ## not the actors.
-filecoin-proofs-api = { version = "11", default_features = false, optional = true }
+# yc  local rust-filecoin-proofs-api
+filecoin-proofs-api = { path = "../../rust-filecoin-proofs-api", version = "11", default_features = false, optional = true }
 libsecp256k1 = { version = "0.7", optional = true }
 bls-signatures = { version = "0.11", default-features = false, optional = true }
 byteorder = "1.4.3"

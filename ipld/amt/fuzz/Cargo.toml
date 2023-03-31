@@ -16,6 +16,7 @@ itertools = "0.10.3"
 
 cid = { version = "0.8.2", default-features = false, features = ["serde-codec", "arb", "std"] }
 fvm_ipld_amt = { path = ".."}
+# fvm_ipld_blockstore = { path = "../../blockstore" }
 fvm_ipld_blockstore = { path = "../../../../ref-fvm2/ipld/blockstore" }
 
 # Prevent this from interfering with workspaces

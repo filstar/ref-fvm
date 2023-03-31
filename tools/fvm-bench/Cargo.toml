@@ -5,7 +5,7 @@ edition = "2021"
 
 [dependencies]
 fvm_integration_tests = { path = "../../testing/integration" }
-fvm_ipld_blockstore = { path = "../../ipld/blockstore" }
+fvm_ipld_blockstore = { path = "../../../../ref-fvm2/ipld/ipld/blockstore" }
 fvm_ipld_encoding = { path = "../../ipld/encoding" }
 fvm_shared = { path = "../../shared" }
 fvm = { path = "../../fvm", default-features = false, features = ["testing"] }
